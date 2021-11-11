@@ -10,12 +10,14 @@ class S3Stack extends cdk.Stack {
     constructor(scope: cdk.Construct, id: string, props?: Props) {
         super(scope, id, props);
         const options = {}
+        let bucketName = "UnencryptedBucket";
         if (props?.encryptBucket) {
             // @ts-ignore
             options.encryption = BucketEncryption.KMS_MANAGED;
+            bucketName = "EncryptedBucket"
         }
 
-        const bucket:Bucket = new S3Bucket(this, 'EncryptedBucket', options as BucketProps);
+        const bucket:Bucket = new S3Bucket(this, bucketName, options as BucketProps);
 
         new cdk.CfnOutput(this, 'DocumentsBucketNameExport', {
           value: bucket.bucketName,

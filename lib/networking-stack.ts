@@ -8,7 +8,7 @@ class NetworkingStack extends Stack {
     constructor(scope: Construct, id: string, props?: Props) {
         super(scope, id);
 
-        new Networking(this, 'AppNetwork', props)
+        new Networking(this, id, props)
     }
 }
 
