@@ -1,6 +1,6 @@
 import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
-import * as TypescriptCdk from '../lib/typescript-cdk-stack';
+import * as TypescriptCdk from '../lib/bucket-stack';
 
 test('Empty Stack', () => {
     const app = new cdk.App();

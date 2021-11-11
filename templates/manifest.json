@@ -1,0 +1,113 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "TypescriptCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "TypescriptCdkStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/TypescriptCdkStack/DocumentsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentsBucket9EC9DEB9",
+            "trace": [
+              "new Bucket (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:758:22)",
+              "new TypescriptCdkStack (/Users/oikotu/Projects/typescript-cdk/lib/typescript-cdk-stack.ts:8:24)",
+              "Object.<anonymous> (/Users/oikotu/Projects/typescript-cdk/bin/typescript-cdk.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1109:14)",
+              "Module.m._compile (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1138:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:989:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:829:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "main (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1109:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1138:10)",
+              "Module.load (node:internal/modules/cjs/loader:989:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:829:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/TypescriptCdkStack/DocumentsBucketNameExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentsBucketNameExport",
+            "trace": [
+              "new TypescriptCdkStack (/Users/oikotu/Projects/typescript-cdk/lib/typescript-cdk-stack.ts:12:9)",
+              "Object.<anonymous> (/Users/oikotu/Projects/typescript-cdk/bin/typescript-cdk.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1109:14)",
+              "Module.m._compile (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1138:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:989:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:829:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "main (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/oikotu/Projects/typescript-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1109:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1138:10)",
+              "Module.load (node:internal/modules/cjs/loader:989:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:829:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/TypescriptCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (node:events:514:26)",
+              "process.emit (node:events:394:28)",
+              "process.emit (node:domain:470:12)",
+              "process.emit (/Users/oikotu/Projects/typescript-cdk/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ],
+        "/TypescriptCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/oikotu/Projects/typescript-cdk/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (node:events:514:26)",
+              "process.emit (node:events:394:28)",
+              "process.emit (node:domain:470:12)",
+              "process.emit (/Users/oikotu/Projects/typescript-cdk/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "TypescriptCdkStack"
+    }
+  }
+}

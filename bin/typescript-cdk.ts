@@ -1,21 +1,22 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { TypescriptCdkStack } from '../lib/typescript-cdk-stack';
+import S3Stack from '../lib/bucket-stack';
+import Networking from "../lib/networking-stack";
 
 const app = new cdk.App();
-new TypescriptCdkStack(app, 'TypescriptCdkStack', {
-  /* If you don't specify 'env', this stack will be environment-agnostic.
-   * Account/Region-dependent features and context lookups will not work,
-   * but a single synthesized template can be deployed anywhere. */
+const Tags = cdk.Tags;
 
-  /* Uncomment the next line to specialize this stack for the AWS Account
-   * and Region that are implied by the current CLI configuration. */
-  // env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-
-  /* Uncomment the next line if you know exactly what Account and Region you
-   * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
-
-  /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
+const s3Stack = new S3Stack(app, 'S3Stack', {
+    env: {region: "us-east-1"},
+    encryptBucket: true
 });
+
+const networkingStack = new Networking(app, 'NetworkingStack', {
+    env: {region: "us-east-1"},
+    maxAzs: 2
+});
+
+Tags.of(s3Stack).add("App", "DocumentManagement");
+Tags.of(s3Stack).add("Environment", "Development");
+Tags.of(networkingStack).add("Module", "Networking");
