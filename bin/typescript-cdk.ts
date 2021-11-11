@@ -1,22 +1,22 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import S3Stack from '../lib/bucket-stack';
-import Networking from "../lib/networking-stack";
+import TypescriptCdkStack, { Props } from '../lib/typescript-cdk-stack';
 
 const app = new cdk.App();
 const Tags = cdk.Tags;
 
-const s3Stack = new S3Stack(app, 'S3Stack', {
-    env: {region: "us-east-1"},
+const props: Props = {
+    stackProps: {
+        env: {region: "us-east-1"},
+    },
+    vpcProps: {
+        maxAzs: 2
+    },
     encryptBucket: true
-});
+};
 
-const networkingStack = new Networking(app, 'NetworkingStack', {
-    env: {region: "us-east-1"},
-    maxAzs: 2
-});
+const stack = new TypescriptCdkStack(app, 'TypescriptCdkStack', props);
 
-Tags.of(s3Stack).add("App", "DocumentManagement");
-Tags.of(s3Stack).add("Environment", "Development");
-Tags.of(networkingStack).add("Module", "Networking");
+Tags.of(stack).add("App", "DocumentManagement");
+Tags.of(stack).add("Environment", "Development");
