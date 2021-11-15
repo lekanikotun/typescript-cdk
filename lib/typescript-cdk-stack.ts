@@ -36,7 +36,9 @@ class TypescriptCdkStack extends cdk.Stack {
         cdk.Tags.of(networkingStack).add("Module", "Networking");
 
         // lambda-Nodejs
-        const api = new DocumentManagementAPI(this, 'DocumentManagementAPI', bucket);
+        const api = new DocumentManagementAPI(this, 'DocumentManagementAPI', {
+            documentBucket: bucket
+        });
         cdk.Tags.of(api).add("Module", "API")
     }
 }
