@@ -2,12 +2,10 @@ import * as cdk from "@aws-cdk/core";
 import * as lambda from "@aws-cdk/aws-lambda-nodejs";
 import { Runtime } from "@aws-cdk/aws-lambda";
 import * as path from "path";
-import {NodejsFunctionProps} from "@aws-cdk/aws-lambda-nodejs/lib/function";
-
-interface DocumentManagementAPIProps extends NodejsFunctionProps {}
+import * as s3 from "@aws-cdk/aws-s3"
 
 class DocumentManagementAP extends cdk.Construct {
-    constructor(scope: cdk.Construct, id: string, props?: DocumentManagementAPIProps) {
+    constructor(scope: cdk.Construct, id: string, props: s3.IBucket) {
         super(scope, id);
         // const getDocumentsFunction =
         new lambda.NodejsFunction(this, "GetDocumentsFunction", {
@@ -18,6 +16,9 @@ class DocumentManagementAP extends cdk.Construct {
                 externalModules: [
                     "aws-sdk"
                 ]
+            },
+            environment: {
+                DOCUMENTS_BUCKET_NAME: props.bucketName
             }
         })
     }
