@@ -1,4 +1,4 @@
-import * as cdk from '@aws-cdk/core';
+import cdk from '@aws-cdk/core';
 import {Bucket, BucketProps} from "@aws-cdk/aws-s3";
 
 const defaultProps = {

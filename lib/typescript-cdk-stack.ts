@@ -1,11 +1,11 @@
-import * as cdk from '@aws-cdk/core';
-import * as path from "path";
+import cdk from '@aws-cdk/core';
+import path from "path";
 import {Bucket, BucketProps, BucketEncryption} from "@aws-cdk/aws-s3";
 import { VpcProps } from "@aws-cdk/aws-ec2";
 import S3Bucket from "./bucket";
 import Networking from "./networking";
 import DocumentManagementAPI from "./api";
-import * as s3Deploy from "@aws-cdk/aws-s3-deployment"
+import s3Deploy from "@aws-cdk/aws-s3-deployment"
 
 export interface Props {
     stackProps?: cdk.StackProps;

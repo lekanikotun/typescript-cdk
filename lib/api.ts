@@ -1,9 +1,9 @@
-import * as cdk from "@aws-cdk/core";
-import * as lambda from "@aws-cdk/aws-lambda-nodejs";
+import cdk from "@aws-cdk/core";
+import lambda from "@aws-cdk/aws-lambda-nodejs";
 import { Runtime } from "@aws-cdk/aws-lambda";
-import * as path from "path";
-import * as s3 from "@aws-cdk/aws-s3";
-import * as iam from "@aws-cdk/aws-iam";
+import path from "path";
+import s3 from "@aws-cdk/aws-s3";
+import iam from "@aws-cdk/aws-iam";
 
 interface DocumentManagementAPIProps {
     documentBucket: s3.IBucket;
