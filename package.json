@@ -23,11 +23,14 @@
   },
   "dependencies": {
     "@aws-cdk/aws-ec2": "1.130.0",
+    "@aws-cdk/aws-iam": "1.130.0",
     "@aws-cdk/aws-lambda": "1.130.0",
     "@aws-cdk/aws-lambda-nodejs": "1.130.0",
     "@aws-cdk/aws-s3": "1.130.0",
     "@aws-cdk/aws-s3-deployment": "1.130.0",
     "@aws-cdk/core": "1.130.0",
+    "aws-sdk": "^2.1031.0",
+    "dayjs": "^1.10.7",
     "source-map-support": "^0.5.16"
   }
 }
