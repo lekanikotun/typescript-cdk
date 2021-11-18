@@ -27,7 +27,7 @@ class DocumentManagementAP extends cdk.Construct {
         });
 
         const bucketPermissions = new iam.PolicyStatement();
-        bucketPermissions.addResources(`${props.documentBucket}`);
+        bucketPermissions.addResources(`${props.documentBucket.bucketArn}/*`);
         bucketPermissions.addActions("s3:GetObject", "s3.PutObject");
         getDocumentsFunction.addToRolePolicy((bucketPermissions));
 
