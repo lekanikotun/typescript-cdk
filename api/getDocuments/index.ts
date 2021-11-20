@@ -13,8 +13,8 @@ const generateSignedURL = async (object: S3.Object): Promise<{ filename: string,
 
     return {
         filename: object.Key!,
-        url: url
-    }
+        url
+    };
 }
 
 export const getDocuments = async (event: APIGatewayProxyEventV2, context: Context): Promise<APIGatewayProxyStructuredResultV2> => {
@@ -23,6 +23,7 @@ export const getDocuments = async (event: APIGatewayProxyEventV2, context: Conte
     try {
         const { Contents: results } = await s3.listObjects({ Bucket: bucketName }).promise();
         const documents = await Promise.all(results!.map(async r => generateSignedURL(r)))
+        
         return {
             statusCode: 200,
             body: JSON.stringify(documents)
@@ -30,7 +31,7 @@ export const getDocuments = async (event: APIGatewayProxyEventV2, context: Conte
     } catch (err) {
         return {
             statusCode: 500,
-            body: 'Success'
+            body: err.message
         }
     }
 
